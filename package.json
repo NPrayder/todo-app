@@ -6,6 +6,9 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
+    "serve": "concurrently \"ng serve todo-app\" \"nx serve api\"",
+    "serve:server": "nx serve api",
+    "serve:client": "ng serve todo-app",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -29,7 +32,6 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/angular": "9.5.1",
     "@angular/animations": "^9.1.0",
     "@angular/common": "^9.1.0",
     "@angular/compiler": "^9.1.0",
@@ -38,12 +40,14 @@
     "@angular/platform-browser": "^9.1.0",
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "^9.1.0",
-    "rxjs": "~6.5.4",
-    "zone.js": "^0.10.2",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
-    "reflect-metadata": "^0.1.13"
+    "@nrwl/angular": "9.5.1",
+    "concurrently": "^5.2.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "~6.5.4",
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular/cli": "9.1.0",
